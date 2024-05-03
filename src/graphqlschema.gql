@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CommonResponse {
+  message: String!
+  status: Float!
+}
+
+type Mutation {
+  deleteUserData(userId: Float!): CommonResponse!
+  updateUserData(age: Float, hobbies: [String!], userId: Float, userName: String): CommonResponse!
+  usersInsertData(age: Float, hobbies: [String!], userId: Float, userName: String): CommonResponse!
+}
+
+type Query {
+  getAllUsers: UsersList!
+  getSpecificUsers(userId: Float!): UsersSpecificList!
+}
+
+type UsersDataList {
+  age: Float
+  hobbies: [String!]!
+  userName: String
+}
+
+type UsersList {
+  data: [UsersDataList!]!
+  message: String!
+  status: Float!
+}
+
+type UsersSpecificList {
+  data: UsersDataList
+  message: String!
+  status: Float!
+}
